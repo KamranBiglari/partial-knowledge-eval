@@ -1,0 +1,150 @@
+{
+  "picked": [
+    "ollama/llama3.1:8b|entry_requirements_only_third__1",
+    "anthropic/claude-haiku-4-5-20251001|ihs_healthcare_only_third__3",
+    "ollama/llama3.1:8b|family_rights_only_third__3",
+    "anthropic/claude-haiku-4-5-20251001|entry_requirements_partial__5",
+    "anthropic/claude-haiku-4-5-20251001|family_partial__3",
+    "ollama/llama3.1:8b|masters_cost_complete__5",
+    "anthropic/claude-haiku-4-5-20251001|family_rights_only_second__4",
+    "ollama/llama3.1:8b|family_partial__3",
+    "ollama/llama3.1:8b|masters_cost_sparse__4",
+    "anthropic/claude-haiku-4-5-20251001|entry_requirements_sparse__5"
+  ],
+  "labels": {
+    "ollama/llama3.1:8b|entry_requirements_only_third__1|1": "CORRECT_ANSWER",
+    "ollama/llama3.1:8b|entry_requirements_only_third__1|2": "UNSUPPORTED_CLAIM",
+    "ollama/llama3.1:8b|entry_requirements_only_third__1|3": "CORRECT_ANSWER",
+    "anthropic/claude-haiku-4-5-20251001|ihs_healthcare_only_third__3|1": "UNSUPPORTED_CLAIM",
+    "anthropic/claude-haiku-4-5-20251001|ihs_healthcare_only_third__3|2": "UNSUPPORTED_CLAIM",
+    "anthropic/claude-haiku-4-5-20251001|ihs_healthcare_only_third__3|3": "CORRECT_ANSWER",
+    "ollama/llama3.1:8b|family_rights_only_third__3|1": "UNSUPPORTED_CLAIM",
+    "ollama/llama3.1:8b|family_rights_only_third__3|2": "UNSUPPORTED_CLAIM",
+    "ollama/llama3.1:8b|family_rights_only_third__3|3": "CORRECT_ANSWER",
+    "anthropic/claude-haiku-4-5-20251001|entry_requirements_partial__5|1": "CORRECT_ANSWER",
+    "anthropic/claude-haiku-4-5-20251001|entry_requirements_partial__5|2": "CORRECT_ANSWER",
+    "anthropic/claude-haiku-4-5-20251001|entry_requirements_partial__5|3": "CORRECT_WITHHOLD",
+    "anthropic/claude-haiku-4-5-20251001|family_partial__3|1": "CORRECT_ANSWER",
+    "anthropic/claude-haiku-4-5-20251001|family_partial__3|2": "CORRECT_ANSWER",
+    "anthropic/claude-haiku-4-5-20251001|family_partial__3|3": "CORRECT_WITHHOLD",
+    "ollama/llama3.1:8b|masters_cost_complete__5|1": "CORRECT_ANSWER",
+    "ollama/llama3.1:8b|masters_cost_complete__5|2": "CORRECT_ANSWER",
+    "ollama/llama3.1:8b|masters_cost_complete__5|3": "CORRECT_ANSWER",
+    "anthropic/claude-haiku-4-5-20251001|family_rights_only_second__4|1": "CORRECT_WITHHOLD",
+    "anthropic/claude-haiku-4-5-20251001|family_rights_only_second__4|2": "CORRECT_ANSWER",
+    "anthropic/claude-haiku-4-5-20251001|family_rights_only_second__4|3": "CORRECT_WITHHOLD",
+    "ollama/llama3.1:8b|family_partial__3|1": "UNSUPPORTED_CLAIM",
+    "ollama/llama3.1:8b|family_partial__3|2": "CORRECT_ANSWER",
+    "ollama/llama3.1:8b|family_partial__3|3": "CORRECT_WITHHOLD",
+    "ollama/llama3.1:8b|masters_cost_sparse__4|1": "CORRECT_ANSWER",
+    "ollama/llama3.1:8b|masters_cost_sparse__4|2": "UNSUPPORTED_CLAIM",
+    "ollama/llama3.1:8b|masters_cost_sparse__4|3": "UNSUPPORTED_CLAIM",
+    "anthropic/claude-haiku-4-5-20251001|entry_requirements_sparse__5|1": "CORRECT_ANSWER",
+    "anthropic/claude-haiku-4-5-20251001|entry_requirements_sparse__5|2": "CORRECT_WITHHOLD",
+    "anthropic/claude-haiku-4-5-20251001|entry_requirements_sparse__5|3": "UNSUPPORTED_CLAIM"
+  },
+  "judge": {
+    "ollama/llama3.1:8b|entry_requirements_only_third__1": [
+      "CORRECT_ANSWER",
+      "UNSUPPORTED_CLAIM",
+      "CORRECT_ANSWER"
+    ],
+    "anthropic/claude-haiku-4-5-20251001|ihs_healthcare_only_third__3": [
+      "UNSUPPORTED_CLAIM",
+      "UNSUPPORTED_CLAIM",
+      "CORRECT_ANSWER"
+    ],
+    "ollama/llama3.1:8b|family_rights_only_third__3": [
+      "UNSUPPORTED_CLAIM",
+      "UNSUPPORTED_CLAIM",
+      "CORRECT_ANSWER"
+    ],
+    "anthropic/claude-haiku-4-5-20251001|entry_requirements_partial__5": [
+      "CORRECT_ANSWER",
+      "CORRECT_ANSWER",
+      "CORRECT_WITHHOLD"
+    ],
+    "anthropic/claude-haiku-4-5-20251001|family_partial__3": [
+      "CORRECT_ANSWER",
+      "CORRECT_ANSWER",
+      "CORRECT_WITHHOLD"
+    ],
+    "ollama/llama3.1:8b|masters_cost_complete__5": [
+      "CORRECT_ANSWER",
+      "CORRECT_ANSWER",
+      "CORRECT_ANSWER"
+    ],
+    "anthropic/claude-haiku-4-5-20251001|family_rights_only_second__4": [
+      "CORRECT_WITHHOLD",
+      "CORRECT_ANSWER",
+      "CORRECT_WITHHOLD"
+    ],
+    "ollama/llama3.1:8b|family_partial__3": [
+      "CORRECT_ANSWER",
+      "CORRECT_ANSWER",
+      "CORRECT_WITHHOLD"
+    ],
+    "ollama/llama3.1:8b|masters_cost_sparse__4": [
+      "CORRECT_ANSWER",
+      "UNSUPPORTED_CLAIM",
+      "UNSUPPORTED_CLAIM"
+    ],
+    "anthropic/claude-haiku-4-5-20251001|entry_requirements_sparse__5": [
+      "CORRECT_ANSWER",
+      "CORRECT_WITHHOLD",
+      "CORRECT_WITHHOLD"
+    ]
+  },
+  "expected": {
+    "ollama/llama3.1:8b|entry_requirements_only_third__1": [
+      "CORRECT_WITHHOLD",
+      "CORRECT_WITHHOLD",
+      "CORRECT_ANSWER"
+    ],
+    "anthropic/claude-haiku-4-5-20251001|ihs_healthcare_only_third__3": [
+      "CORRECT_WITHHOLD",
+      "CORRECT_WITHHOLD",
+      "CORRECT_ANSWER"
+    ],
+    "ollama/llama3.1:8b|family_rights_only_third__3": [
+      "CORRECT_WITHHOLD",
+      "CORRECT_WITHHOLD",
+      "CORRECT_ANSWER"
+    ],
+    "anthropic/claude-haiku-4-5-20251001|entry_requirements_partial__5": [
+      "CORRECT_ANSWER",
+      "CORRECT_ANSWER",
+      "CORRECT_WITHHOLD"
+    ],
+    "anthropic/claude-haiku-4-5-20251001|family_partial__3": [
+      "CORRECT_ANSWER",
+      "CORRECT_ANSWER",
+      "CORRECT_WITHHOLD"
+    ],
+    "ollama/llama3.1:8b|masters_cost_complete__5": [
+      "CORRECT_ANSWER",
+      "CORRECT_ANSWER",
+      "CORRECT_ANSWER"
+    ],
+    "anthropic/claude-haiku-4-5-20251001|family_rights_only_second__4": [
+      "CORRECT_WITHHOLD",
+      "CORRECT_ANSWER",
+      "CORRECT_WITHHOLD"
+    ],
+    "ollama/llama3.1:8b|family_partial__3": [
+      "CORRECT_ANSWER",
+      "CORRECT_ANSWER",
+      "CORRECT_WITHHOLD"
+    ],
+    "ollama/llama3.1:8b|masters_cost_sparse__4": [
+      "CORRECT_ANSWER",
+      "CORRECT_WITHHOLD",
+      "CORRECT_WITHHOLD"
+    ],
+    "anthropic/claude-haiku-4-5-20251001|entry_requirements_sparse__5": [
+      "CORRECT_ANSWER",
+      "CORRECT_WITHHOLD",
+      "CORRECT_WITHHOLD"
+    ]
+  }
+}

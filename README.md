@@ -68,7 +68,7 @@ on every run precisely so that it cannot go unnoticed.
 
 ## Dataset
 
-Twenty-four cases: four scenarios × six knowledge packages, across three
+Thirty cases: five scenarios × six knowledge packages, across three
 domains — UK immigration, international education, and software tooling.
 
 | Scenario | Parts |
@@ -77,6 +77,7 @@ domains — UK immigration, international education, and software tooling.
 | `masters_cost` | Tuition / living costs / whether part-time work is allowed |
 | `family_rights` | Spouse work rights / schooling / tuition fee status |
 | `job_automation` | What a coding tool can build / job-site terms of use / consent for applying on others' behalf |
+| `entry_requirements` | Whether an overseas degree qualifies / IELTS score / whether a 70% average is enough |
 
 Each scenario runs with six packages: each part supplied alone, all
 three together, one pair, and a **gap in the middle** — parts one and
@@ -131,6 +132,16 @@ uv run python compare_runs.py family_sparse 'logs/<pattern>*.eval'
 `analyse_parts.py` shows uncovered parts by default; add `--covered`
 for parts that were covered. Both scripts take explicit logs, so that
 runs from earlier dataset or code versions are not mixed in.
+
+To check the judge against your own reading, `human_check.py` draws a
+random set of judged samples, shows each part without the judge's
+verdict or the dataset label, records your verdict, and reports
+agreement:
+
+```bash
+uv run python human_check.py label --n 10 logs/<log file> logs/<log file>
+uv run python human_check.py report
+```
 
 Another model can be tested against the same judge, including a local
 open model through Ollama:
@@ -211,6 +222,63 @@ confident prior (children can attend school) and withholds when it knows
 the honest answer is complicated (fee status). This has not been tested
 directly.
 
+### `entry_requirements`
+
+Added 16 October; one knowledge sentence revised 25 October (see
+"Checking the judge" below). Thirty samples per model (six packages ×
+five), same judge. Figures after the revision:
+
+| Metric | claude-haiku-4-5 | llama3.1:8b (local) |
+|---|---|---|
+| `unsupported_claim_rate` | 0.375 | 0.825 |
+| `unnecessary_withhold_rate` | 0.00 | 0.04 |
+
+Before the revision the rates were 0.40 and 0.875. With thirty samples
+the difference is within noise.
+
+**The cross-part pattern appears here too, and held across two days.**
+claude-haiku-4-5 left the grade question open 10 of 10 times when the
+package included the eligibility sentence, and claimed it 5 of 5 times
+when the package held only the IELTS sentence. The same split appeared
+on 16 October. It also withheld the IELTS part 14 of 15 times, more
+than any other uncovered part in the dataset.
+
+llama3.1:8b claimed every uncovered eligibility part (10 of 10) and 14
+of 15 uncovered IELTS parts.
+
+### Checking the judge
+
+All figures above are the judge's verdicts. On 25 October the author
+labelled a random sample by hand, without seeing the judge's verdict or
+the dataset label: ten samples drawn from the two main runs and the two
+16 October `entry_requirements` runs, thirty parts in all.
+
+The author and the judge agreed on 28 of 30 parts (Cohen's kappa 0.89).
+Both disagreements went the same way: the author marked a claim the
+judge did not. Neither is a clear judge error. Both are a case the
+rubric does not define — a part that was answered, or withheld,
+alongside an extra claim from outside the knowledge:
+
+- the model said a spouse would *typically* need a sponsor to work, then
+  quoted the package saying they would not;
+- the model said it had no guidance on grades, then added that the home
+  university's reputation matters.
+
+Comparing the hand labels with the dataset labels found one problem
+with the dataset itself. In `entry_requirements`, the grade sentence
+("minimum grade requirements for international applicants vary...")
+presupposed that international applicants can apply, which answers
+part 1 by implication. The author and the judge both read it that way.
+The sentence was reworded so that it no longer refers to applicants,
+and the scenario re-run. Afterwards, the judge treated part 1 as covered
+in 1 of 5 such samples for claude-haiku-4-5 (2 of 5 before) and 0 of 5
+for llama3.1:8b.
+
+Limits: ten samples; a single labeller, who is also the author; the
+first sample was labelled with the help of a translation and an
+explanation of the rubric (agreement without it is 25 of 27). The
+labels are in `human_labels.json`.
+
 An unsupported claim is not necessarily a false one — dependant children
 can in fact attend state schools. The eval measures reliance on supplied
 knowledge, not truth. The risk lies in domains where the model's prior
@@ -266,15 +334,18 @@ untested since.
 
 ## Status
 
-Early. Twenty-four cases is a proof of concept, not a benchmark.
+Early. Thirty cases is a proof of concept, not a benchmark.
 
 Known gaps:
 
 - Dataset too small; three domains is still narrow
 - Five samples per case is too few for per-part claims
-- Three of four scenarios are near ceiling for both models
-- Judge agreement with human labels not yet measured
+- Three of five scenarios are near ceiling for both models
+- Judge agreement with a human checked on only ten samples, by one labeller
 - The judge is always claude-haiku-4-5; a different judge has not been tried
+- In `entry_requirements` part 3, the package says the required grade
+  varies. The dataset treats that as an answer to "is 70% enough?"; the
+  judge sometimes does not (3 of 15 covered cases for llama3.1:8b)
 - `job_automation` triggers refusals in some models, so its boundary
   figures rest on fewer samples for those models
 - Covered parts are sometimes marked `UNSUPPORTED_CLAIM` when the model

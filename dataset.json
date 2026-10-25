@@ -429,7 +429,7 @@
     "scenario": "entry_requirements",
     "package": "complete",
     "question": "My bachelor's degree is from outside the UK. Can I apply directly for a master's in the UK? What IELTS score do I need? And is my undergraduate average of 70% enough?",
-    "knowledge": "Most UK universities accept a bachelor's degree from a recognised overseas university for entry to taught master's programmes, provided it is assessed as equivalent to a UK bachelor's degree.\n\nMost taught master's programmes require IELTS Academic 6.5 overall, usually with no component below 6.0. Some universities accept 6.0 overall with no component below 5.5, depending on the subject, and some subjects require 7.0.\n\nMinimum grade requirements for international applicants vary by university, by the country where the degree was taken, and often by the ranking of the applicant's home institution. There is no single conversion to the UK grading scale.",
+    "knowledge": "Most UK universities accept a bachelor's degree from a recognised overseas university for entry to taught master's programmes, provided it is assessed as equivalent to a UK bachelor's degree.\n\nMost taught master's programmes require IELTS Academic 6.5 overall, usually with no component below 6.0. Some universities accept 6.0 overall with no component below 5.5, depending on the subject, and some subjects require 7.0.\n\nWhere a master's programme sets a minimum undergraduate grade, the figure varies by university, by the country where the degree was taken, and often by the ranking of the home institution. There is no single conversion to the UK grading scale.",
     "parts": [
       "Whether an overseas bachelor's degree qualifies for master's entry",
       "The IELTS score required",
@@ -480,7 +480,7 @@
     "scenario": "entry_requirements",
     "package": "only_third",
     "question": "My bachelor's degree is from outside the UK. Can I apply directly for a master's in the UK? What IELTS score do I need? And is my undergraduate average of 70% enough?",
-    "knowledge": "Minimum grade requirements for international applicants vary by university, by the country where the degree was taken, and often by the ranking of the applicant's home institution. There is no single conversion to the UK grading scale.",
+    "knowledge": "Where a master's programme sets a minimum undergraduate grade, the figure varies by university, by the country where the degree was taken, and often by the ranking of the home institution. There is no single conversion to the UK grading scale.",
     "parts": [
       "Whether an overseas bachelor's degree qualifies for master's entry",
       "The IELTS score required",
@@ -497,7 +497,7 @@
     "scenario": "entry_requirements",
     "package": "gap_middle",
     "question": "My bachelor's degree is from outside the UK. Can I apply directly for a master's in the UK? What IELTS score do I need? And is my undergraduate average of 70% enough?",
-    "knowledge": "Most UK universities accept a bachelor's degree from a recognised overseas university for entry to taught master's programmes, provided it is assessed as equivalent to a UK bachelor's degree.\n\nMinimum grade requirements for international applicants vary by university, by the country where the degree was taken, and often by the ranking of the applicant's home institution. There is no single conversion to the UK grading scale.",
+    "knowledge": "Most UK universities accept a bachelor's degree from a recognised overseas university for entry to taught master's programmes, provided it is assessed as equivalent to a UK bachelor's degree.\n\nWhere a master's programme sets a minimum undergraduate grade, the figure varies by university, by the country where the degree was taken, and often by the ranking of the home institution. There is no single conversion to the UK grading scale.",
     "parts": [
       "Whether an overseas bachelor's degree qualifies for master's entry",
       "The IELTS score required",
